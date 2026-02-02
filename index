@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kings - Escola de Jiu-Jitsu | Jardim Caiçara</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kings-orange': '#FF8C00',
+                        'kings-black': '#0A0A0A',
+                        'kings-gray': '#1A1A1A',
+                    },
+                    fontFamily: {
+                        'sans': ['Open Sans', 'sans-serif'],
+                        'heading': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .bg-hero { 
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469&auto=format&fit=crop'); 
+            background-size: cover; background-position: center; 
+        }
+        .modal-open { overflow: hidden; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .dot-pulse { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.7); animation: dotPulse 2s infinite; }
+        @keyframes dotPulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 184, 148, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 184, 148, 0); } }
+    </style>
+</head>
+<body class="bg-white text-kings-black font-sans antialiased">
+
+    <div id="top-status" class="bg-kings-black text-white text-[10px] py-2 px-4 text-center font-bold tracking-[0.2em] uppercase border-b border-white/10">
+        <span id="live-dot" class="inline-block w-2 h-2 rounded-full mr-2 bg-gray-500"></span>
+        <span id="status-text">Carregando status...</span>
+    </div>
+
+    <nav class="sticky top-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="font-heading font-extrabold text-xl italic tracking-tighter uppercase flex items-center gap-2">
+                THE <span class="text-kings-orange text-2xl">KINGS</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-[11px] font-extrabold uppercase tracking-widest">
+                <a href="#diferenciais" class="hover:text-kings-orange transition">Metodologia</a>
+                <a href="#modalidades" class="hover:text-kings-orange transition">Modalidades</a>
+                <a href="#planos" class="hover:text-kings-orange transition">Planos</a>
+                <a href="#horarios" class="hover:text-kings-orange transition">Horários</a>
+                <a href="https://wa.me/5511951945648" target="_blank" rel="noopener noreferrer" class="bg-kings-orange text-white px-6 py-3 rounded-full hover:bg-orange-600 transition shadow-lg shadow-orange-500/30">Agendar Aula</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative h-[85vh] flex items-center justify-center text-center text-white bg-hero px-6">
+        <div class="max-w-4xl relative z-10">
+            <span class="bg-kings-orange/90 px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block backdrop-blur-sm">Jardim Caiçara • São Paulo</span>
+            <h1 class="font-heading font-black text-5xl md:text-7xl mb-6 leading-none italic uppercase drop-shadow-lg">
+                FORJANDO <span class="text-transparent bg-clip-text bg-gradient-to-r from-kings-orange to-yellow-500">CAMPEÕES</span><br>NO TATAME E NA VIDA
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 font-medium leading-relaxed max-w-2xl mx-auto drop-shadow-md">
+                Uma Jornada Técnica Unificada. Duas Metodologias Exclusivas. Formamos crianças fortes e adultos de alta performance.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511951945648" target="_blank" rel="noopener noreferrer" class="bg-kings-orange px-8 py-4 rounded-lg font-bold uppercase tracking-widest hover:scale-105 transition duration-300 shadow-xl border border-kings-orange text-xs md:text-sm">Agendar Experimental</a>
+                <a href="#diferenciais" class="bg-white/10 backdrop-blur-md border border-white/30 px-8 py-4 rounded-lg font-bold uppercase tracking-widest hover:bg-white/20 transition text-xs md:text-sm">Conhecer a Escola</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="diferenciais" class="py-20 bg-white -mt-10 relative z-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition duration-300 cursor-pointer group" onclick="openModal('modalMethodology')">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-lg uppercase mb-3 text-kings-black">Uma Jornada, Duas Vias</h3>
+                    <p class="text-sm text-gray-500 mb-6 leading-relaxed">Todos estudam a mesma técnica de elite. A diferença está na metodologia exclusiva aplicada para cada idade.</p>
+                    <span class="text-blue-600 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">Ver Metodologia <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-xl cursor-pointer h-full min-h-[300px]" onclick="openModal('modalCompetition')">
+                    <img src="professor.jpg" alt="Prof Jonathan Willy" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-8 flex flex-col justify-end">
+                        <div class="w-14 h-14 bg-kings-orange text-white rounded-2xl flex items-center justify-center text-2xl mb-4">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <h3 class="font-heading font-extrabold text-lg uppercase mb-2 text-white">Time Profissional</h3>
+                        <p class="text-sm text-gray-200 mb-4 leading-relaxed">Liderados pelo Prof. Jonathan Willy. Disputamos os principais títulos da CBJJ, FPJJ e IBJJF.</p>
+                        <span class="text-kings-orange font-bold text-xs uppercase tracking-widest flex items-center gap-2">Ver Títulos <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition duration-300 cursor-pointer group" onclick="openModal('modalCulture')">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-green-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-heading font-extrabold text-lg uppercase mb-3 text-kings-black">Cultura & Gestão</h3>
+                    <p class="text-sm text-gray-500 mb-6 leading-relaxed">Ambiente seguro, higienizado e familiar. Um dojo pautado na ética marcial e gestão profissional via App <strong>Next Fit</strong>.</p>
+                    <span class="text-green-600 font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">Ver Detalhes <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="modalidades" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="text-kings-orange font-bold uppercase text-[10px] tracking-[0.3em]">Treine com os melhores</span>
+            <h2 class="font-heading font-black text-3xl md:text-4xl mt-2 mb-12 italic uppercase text-kings-black">Nossas Modalidades</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                
+                <div class="group relative rounded-3xl overflow-hidden h-80 shadow-lg cursor-pointer lg:col-span-1">
+                    <img src="jjadulto.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700 grayscale group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6 text-left">
+                        <h3 class="text-white font-heading font-bold text-lg uppercase italic">Jiu-Jitsu</h3>
+                        <p class="text-gray-300 text-[9px] mt-1 opacity-0 group-hover:opacity-100 transition duration-500">Técnica e Defesa Pessoal.</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden h-80 shadow-lg cursor-pointer lg:col-span-1 border-2 border-kings-orange/50">
+                    <img src="IMG_3586.JPG" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 text-left">
+                        <span class="bg-kings-orange text-white text-[8px] px-2 py-1 rounded mb-2 w-fit font-bold uppercase">Destaque</span>
+                        <h3 class="text-white font-heading font-bold text-lg uppercase italic">Kids</h3>
+                        <p class="text-gray-300 text-[9px] mt-1">Disciplina e Diversão.</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden h-80 shadow-lg cursor-pointer lg:col-span-1">
+                    <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?q=80&w=1000" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6 text-left">
+                        <h3 class="text-white font-heading font-bold text-lg uppercase italic">NoGi</h3>
+                        <p class="text-gray-300 text-[9px] mt-1 opacity-0 group-hover:opacity-100 transition duration-500">Grappling Sem Kimono.</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden h-80 shadow-lg cursor-pointer lg:col-span-1">
+                    <img src="AF8B2221.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6 text-left">
+                        <h3 class="text-white font-heading font-bold text-lg uppercase italic">Muay Thai</h3>
+                        <p class="text-gray-300 text-[9px] mt-1 opacity-0 group-hover:opacity-100 transition duration-500">Arte das 8 armas.</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden h-80 shadow-lg cursor-pointer lg:col-span-1">
+                    <img src="IMG_4680.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6 text-left">
+                        <h3 class="text-white font-heading font-bold text-lg uppercase italic">Boxe</h3>
+                        <p class="text-gray-300 text-[9px] mt-1 opacity-0 group-hover:opacity-100 transition duration-500">A nobre arte.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="planos" class="py-24 bg-kings-black text-white px-6 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute right-0 top-0 w-[500px] h-[500px] bg-kings-orange rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-kings-orange font-bold uppercase text-[10px] tracking-[0.3em]">Investimento no seu Futuro</span>
+                <h2 class="font-heading font-black text-3xl md:text-4xl mt-2 italic uppercase">Escolha seu Plano</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
+                
+                <div class="bg-kings-gray border border-white/10 rounded-3xl p-8 relative hover:border-kings-orange/50 transition duration-300">
+                    <span class="bg-gray-700 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest absolute top-6 right-6">Flexibilidade</span>
+                    <h3 class="font-heading font-extrabold text-2xl uppercase text-white mb-2">Mensal (Pré-pago)</h3>
+                    <p class="text-xs text-gray-400 mb-2 uppercase tracking-wider">Sem fidelidade • Renovação Mensal</p>
+                    <p class="text-[10px] text-kings-orange font-bold uppercase tracking-widest mb-6">Aceitamos: PIX, Dinheiro e Crédito Recorrente</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                            <div>
+                                <span class="text-sm text-white font-bold block">Plano Prata</span>
+                                <span class="text-[10px] text-gray-400">1 Modalidade</span>
+                            </div>
+                            <span class="font-heading font-black text-xl text-white">R$ 179,90</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-white/10 pb-4">
+                            <div>
+                                <span class="text-sm text-kings-orange font-bold block">Passaporte</span>
+                                <span class="text-[10px] text-gray-400">Todas as Modalidades</span>
+                            </div>
+                            <span class="font-heading font-black text-xl text-kings-orange">R$ 199,90</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 rounded-xl p-4 mb-6">
+                        <p class="text-[10px] text-gray-400 text-center uppercase tracking-wide">
+                            <i class="fa-solid fa-circle-info mr-1 text-kings-orange"></i> Taxa de Matrícula: <strong class="text-white">R$ 99,90</strong> (À vista)
+                        </p>
+                    </div>
+
+                    <a href="https://wa.me/5511951945648?text=Ola,%20quero%20saber%20mais%20sobre%20os%20Planos%20Mensais" class="block w-full py-4 text-center border border-white/30 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-kings-black transition">Contratar Mensal</a>
+                </div>
+
+                <div class="bg-gradient-to-br from-white to-gray-100 text-kings-black rounded-3xl p-1 relative transform scale-105 shadow-2xl shadow-orange-500/20">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-kings-orange text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                        Melhor Escolha
+                    </div>
+                    
+                    <div class="bg-white rounded-[20px] p-8 h-full">
+                        <h3 class="font-heading font-extrabold text-3xl uppercase text-kings-black mb-1">Clube da Luta</h3>
+                        <p class="text-xs text-kings-orange font-bold mb-8 uppercase tracking-wider">Plano Anual (Fidelidade)</p>
+
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-end justify-between">
+                                <div>
+                                    <span class="block text-xs font-bold uppercase text-gray-400 mb-1">Plano Kids</span>
+                                    <span class="block text-[9px] text-gray-400 font-medium">Acesso Total + Vantagens</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-3xl font-heading font-black text-kings-black">R$ 129,90</span>
+                                    <span class="text-[10px] text-gray-500 block">/mês (1+11x no cartão)</span>
+                                </div>
+                            </div>
+                            <div class="w-full h-px bg-gray-100"></div>
+                            <div class="flex items-end justify-between">
+                                <div>
+                                    <span class="block text-xs font-bold uppercase text-gray-400 mb-1">Plano Adulto</span>
+                                    <span class="block text-[10px] text-gray-400 line-through">De R$ 199,90</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-3xl font-heading font-black text-kings-black">R$ 99,90</span>
+                                    <span class="text-[10px] text-gray-500 block">/mês (12x no cartão)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-2 mb-8 text-xs text-gray-600 font-medium">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Acesso Livre (JJ + NoGi + MT + Boxe)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Trancamento de até 60 dias</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Parcelado no Limite do Cartão</li>
+                        </ul>
+
+                        <a href="https://wa.me/5511951945648?text=Ola,%20quero%20o%20Clube%20da%20Luta" class="block w-full py-4 text-center bg-kings-orange text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-orange-600 transition shadow-lg shadow-orange-500/30">Garantir Desconto</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="horarios" class="py-20 bg-white px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-heading font-black text-3xl italic text-kings-orange uppercase">Grade de Aulas</h2>
+                <p class="text-gray-500 text-sm mt-2">Escolha o melhor horário para você.</p>
+            </div>
+
+            <div class="flex justify-center flex-wrap gap-2 mb-8">
+                <button onclick="filterDay(1)" class="day-btn px-6 py-2 rounded-full border border-gray-200 text-xs font-bold uppercase tracking-widest hover:bg-kings-black hover:text-white transition" data-day="1">Segunda</button>
+                <button onclick="filterDay(2)" class="day-btn px-6 py-2 rounded-full border border-gray-200 text-xs font-bold uppercase tracking-widest hover:bg-kings-black hover:text-white transition" data-day="2">Terça</button>
+                <button onclick="filterDay(3)" class="day-btn px-6 py-2 rounded-full border border-gray-200 text-xs font-bold uppercase tracking-widest hover:bg-kings-black hover:text-white transition" data-day="3">Quarta</button>
+                <button onclick="filterDay(4)" class="day-btn px-6 py-2 rounded-full border border-gray-200 text-xs font-bold uppercase tracking-widest hover:bg-kings-black hover:text-white transition" data-day="4">Quinta</button>
+                <button onclick="filterDay(5)" class="day-btn px-6 py-2 rounded-full border border-gray-200 text-xs font-bold uppercase tracking-widest hover:bg-kings-black hover:text-white transition" data-day="5">Sexta</button>
+            </div>
+
+            <div id="classes-container" class="grid sm:grid-cols-2 gap-4"></div>
+        </div>
+    </section>
+
+    <footer class="bg-kings-black text-white py-16 text-center border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <span class="font-heading font-black text-3xl italic tracking-tighter mb-4 block uppercase">THE <span class="text-kings-orange">KINGS</span></span>
+            <p class="text-gray-400 font-bold text-xs uppercase tracking-widest mb-1">Jardim Caiçara, São Paulo</p>
+            <p class="text-gray-600 text-[10px] mb-10 uppercase tracking-[0.2em]">Rua Vasco de Quevedo, 190</p>
+            
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="https://instagram.com/thekingsjw" target="_blank" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-kings-orange transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://wa.me/5511951945648" target="_blank" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-green-600 transition"><i class="fab fa-whatsapp text-xl"></i></a>
+            </div>
+            
+            <p class="text-[9px] text-gray-700 uppercase tracking-[0.3em] font-bold">&copy; 2026 The Kings Academy</p>
+        </div>
+    </footer>
+
+    <div id="modalMethodology" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('modalMethodology')"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl bg-white rounded-3xl p-0 shadow-2xl animate-fade-in max-h-[90vh] overflow-y-auto">
+            <div class="bg-gray-50 p-6 border-b border-gray-100 flex justify-between items-center sticky top-0 z-10">
+                <h3 class="font-heading font-extrabold text-lg text-kings-black uppercase">Metodologia The Kings</h3>
+                <button onclick="closeModal('modalMethodology')" class="text-gray-400 hover:text-red-500 text-2xl">&times;</button>
+            </div>
+            <div class="p-6 pb-2 bg-white">
+                <p class="text-xs text-gray-600 italic border-l-4 border-kings-orange pl-3">"Todos estudam a mesma jornada técnica de excelência. A diferença está na <strong>Metodologia de Ensino</strong> exclusiva para cada fase da vida."</p>
+            </div>
+            <div class="flex border-b border-gray-200">
+                <button class="flex-1 py-4 text-xs font-bold uppercase tracking-widest text-kings-orange bg-orange-50 border-b-2 border-kings-orange transition" id="tab-kids-btn" onclick="switchMetodologia('kids')">Kids (Grau de Disciplina)</button>
+                <button class="flex-1 py-4 text-xs font-bold uppercase tracking-widest text-gray-400 hover:bg-gray-50 transition" id="tab-adults-btn" onclick="switchMetodologia('adults')">Adultos (Performance)</button>
+            </div>
+            <div class="p-8 pt-4">
+                <div id="tab-kids-content" class="block animate-fade-in">
+                    <div class="text-center mb-6">
+                        <h4 class="font-heading font-black text-2xl text-kings-black uppercase italic mb-1">Crianças Fortes, Adultos Fortes</h4>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-wider">A Jornada Técnica é desbloqueada pelo comportamento.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-orange-50 p-3 rounded-xl border-l-4 border-orange-500"><span class="block text-orange-600 font-bold text-xs uppercase mb-1">Laranja: Atenção</span><p class="text-[10px] text-gray-600">Foco escolar, organização e aprender com os erros.</p></div>
+                        <div class="bg-yellow-50 p-3 rounded-xl border-l-4 border-yellow-400"><span class="block text-yellow-600 font-bold text-xs uppercase mb-1">Amarelo: Disciplina</span><p class="text-[10px] text-gray-600">Persistência! Superar metas e não desistir.</p></div>
+                        <div class="bg-green-50 p-3 rounded-xl border-l-4 border-green-500"><span class="block text-green-600 font-bold text-xs uppercase mb-1">Verde: Coragem</span><p class="text-[10px] text-gray-600">Presença constante (mesmo na chuva) e enfrentar desafios.</p></div>
+                        <div class="bg-blue-50 p-3 rounded-xl border-l-4 border-blue-500"><span class="block text-blue-600 font-bold text-xs uppercase mb-1">Azul: Respeito</span><p class="text-[10px] text-gray-600">Gentileza com colegas e cuidado com o dojo.</p></div>
+                    </div>
+                    <div class="bg-gray-900 text-white p-4 rounded-xl flex gap-4 items-center">
+                        <i class="fa-solid fa-unlock text-kings-orange text-xl"></i>
+                        <div><strong class="block text-xs uppercase mb-1 text-kings-orange">O Desbloqueio Técnico</strong><p class="text-[10px] text-gray-300">Ao conquistar as cores do comportamento, o aluno destrava o <strong>Grau Branco</strong>, validando sua evolução técnica na jornada do Jiu-Jitsu.</p></div>
+                    </div>
+                </div>
+                <div id="tab-adults-content" class="hidden animate-fade-in">
+                    <div class="text-center mb-6">
+                        <h4 class="font-heading font-black text-2xl text-kings-black uppercase italic mb-1">Jornada de Alta Performance</h4>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-wider">A mesma técnica, focada em eficiência e combate real.</p>
+                    </div>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-xl border border-gray-100"><div class="bg-blue-600 text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm">1</div><div><h5 class="text-xs font-bold uppercase text-gray-800">Fase 1: Fundamentos (Criar)</h5><p class="text-[10px] text-gray-500">Construção da base sólida e defesas.</p></div></div>
+                        <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-xl border border-gray-100"><div class="bg-yellow-500 text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm">2</div><div><h5 class="text-xs font-bold uppercase text-gray-800">Fase 2: Conexões (Alinhar)</h5><p class="text-[10px] text-gray-500">Transições fluidas entre posições.</p></div></div>
+                        <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-xl border border-gray-100"><div class="bg-green-600 text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm">3</div><div><h5 class="text-xs font-bold uppercase text-gray-800">Fase 3: Combate (Desconstruir)</h5><p class="text-[10px] text-gray-500">Free Moviment e decisão sob pressão.</p></div></div>
+                        <div class="flex items-center gap-4 p-3 bg-red-50 border border-red-100 rounded-xl"><div class="bg-red-600 text-white w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm"><i class="fa-solid fa-flag-checkered"></i></div><div><h5 class="text-xs font-bold uppercase text-red-800">Fase 4: Graduação</h5><p class="text-[10px] text-red-600">Validação técnica (Grau Branco) para troca de faixa.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalCompetition" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('modalCompetition')"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white rounded-3xl p-0 shadow-2xl animate-fade-in max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <h3 class="font-heading font-black text-2xl text-kings-black uppercase italic mb-4">Time de Elite</h3>
+                <p class="text-sm text-gray-600 mb-6">Liderados pelo Prof. Jonathan Willy (Campeão Sul-Americano, Paulista, BJJ Pro), nosso time disputa os principais títulos da <strong>CBJJ, FPJJ e IBJJF</strong>. +200 Medalhas conquistadas.</p>
+                <div class="flex gap-4 justify-center text-3xl text-gray-300">
+                    <i class="fa-solid fa-medal hover:text-kings-orange transition"></i>
+                    <i class="fa-solid fa-trophy hover:text-kings-orange transition"></i>
+                    <i class="fa-solid fa-certificate hover:text-kings-orange transition"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalCulture" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal('modalCulture')"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white rounded-3xl p-0 shadow-2xl animate-fade-in max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <h3 class="font-heading font-black text-2xl text-kings-black uppercase italic mb-4">Cultura, Ética & Gestão</h3>
+                
+                <div class="mb-8">
+                    <h4 class="font-bold text-xs uppercase tracking-widest text-kings-orange mb-3">Os Pilares da Honra</h4>
+                    <ul class="space-y-4 text-xs text-gray-600">
+                        <li class="flex gap-3 items-start">
+                            <div class="bg-gray-100 p-2 rounded text-kings-black"><i class="fa-solid fa-hand-fist"></i></div>
+                            <div>
+                                <strong class="block text-kings-black uppercase text-[10px]">Autocontrole</strong>
+                                <span>Não utilizamos o Jiu-Jitsu para agressão. A luta começa e termina no tatame.</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <div class="bg-gray-100 p-2 rounded text-kings-black"><i class="fa-solid fa-shield-cat"></i></div>
+                            <div>
+                                <strong class="block text-kings-black uppercase text-[10px]">Anti-Bullying</strong>
+                                <span>Tolerância zero. Aqui formamos protetores, não opressores.</span>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <div class="bg-gray-100 p-2 rounded text-kings-black"><i class="fa-solid fa-users"></i></div>
+                            <div>
+                                <strong class="block text-kings-black uppercase text-[10px]">Lealdade & Hierarquia</strong>
+                                <span>Respeito absoluto aos mestres, graduações e parceiros de treino.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-gray-100 pt-6">
+                    <h4 class="font-bold text-xs uppercase tracking-widest text-blue-600 mb-3">Estrutura & Tecnologia</h4>
+                    <ul class="space-y-2 text-xs text-gray-600 mb-4">
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Ambiente familiar, seguro e higienizado.</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Gestão financeira transparente.</li>
+                    </ul>
+                    <div class="bg-blue-50 p-4 rounded-xl flex gap-4 items-center border border-blue-100">
+                        <i class="fa-solid fa-mobile-screen text-blue-500 text-2xl"></i>
+                        <div>
+                            <strong class="block text-blue-800 uppercase text-[10px]">App Next Fit</strong>
+                            <p class="text-[10px] text-gray-600">Check-in, pagamentos e evolução na palma da mão.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // GRADE
+        const schedule = {
+            "1,3": [{h:"08:00",n:"JJ Kids"},{h:"09:00",n:"JJ Adulto"},{h:"18:00",n:"Muay Thai"},{h:"19:00",n:"JJ Kids"},{h:"20:00",n:"JJ Adulto"},{h:"21:00",n:"Boxe"}],
+            "2,4": [{h:"19:00",n:"JJ Baby"},{h:"20:00",n:"MT Kids"},{h:"21:00",n:"MT Adulto"}],
+            "5": [{h:"08:00",n:"NoGi Kids"},{h:"09:00",n:"NoGi Adulto"},{h:"18:00",n:"Muay Thai"},{h:"19:00",n:"NoGi Kids"},{h:"20:00",n:"NoGi Adulto"},{h:"21:00",n:"Boxe"}]
+        };
+        function filterDay(d) {
+            document.querySelectorAll('.day-btn').forEach(b => { b.classList.remove('bg-kings-black','text-white'); b.classList.add('border-gray-200'); });
+            const btn = document.querySelector(`[data-day="${d}"]`);
+            if(btn) { btn.classList.remove('border-gray-200'); btn.classList.add('bg-kings-black','text-white'); }
+            
+            let cls = [];
+            for(let k in schedule) if(k.split(',').includes(d.toString())) cls = schedule[k];
+            
+            const c = document.getElementById('classes-container');
+            c.innerHTML = cls.length ? cls.map(x => `<div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-kings-orange/30 transition"><span class="font-black text-lg text-kings-orange">${x.h}</span><h4 class="font-bold uppercase text-xs tracking-widest text-gray-800">${x.n}</h4></div>`).join('') : `<div class="col-span-2 text-center py-10 text-gray-400 text-sm italic bg-gray-50 rounded-xl">Sem aulas neste dia.</div>`;
+        }
+
+        // STATUS
+        function updateStatus() {
+            const now = new Date();
+            const d = now.getDay(), h = now.getHours(), m = now.getMinutes(), total = h*60+m;
+            const dot = document.getElementById('live-dot'), txt = document.getElementById('status-text');
+            let status = "closed", active = "";
+
+            if(d !== 0 && d !== 6) {
+                for(let k in schedule) {
+                    if(k.split(',').map(Number).includes(d)) {
+                        schedule[k].forEach(c => {
+                            const [ch, cm] = c.h.split(':').map(Number);
+                            const start = ch*60+cm, end = start+60, open = start-10;
+                            if(total >= start && total < end) { status = "active"; active = c.n; }
+                            else if(total >= open && total < start && status !== "active") { status = "opening"; active = c.n; }
+                        });
+                    }
+                }
+            }
+
+            if(status === "active") { dot.className="inline-block w-2 h-2 rounded-full mr-2 bg-green-500 dot-pulse"; txt.innerText=`Rolando Agora: ${active}`; }
+            else if(status === "opening") { dot.className="inline-block w-2 h-2 rounded-full mr-2 bg-yellow-400"; txt.innerText=`Abrindo para: ${active}`; }
+            else { dot.className="inline-block w-2 h-2 rounded-full mr-2 bg-red-500"; txt.innerText="Academia Fechada"; }
+        }
+
+        // MODALS
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); document.body.classList.add('modal-open'); }
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); document.body.classList.remove('modal-open'); }
+        function switchMetodologia(t) {
+            ['kids','adults'].forEach(x => {
+                document.getElementById(`tab-${x}-content`).classList.add('hidden');
+                document.getElementById(`tab-${x}-btn`).className = "flex-1 py-4 text-xs font-bold uppercase tracking-widest text-gray-400 hover:bg-gray-50 transition";
+            });
+            document.getElementById(`tab-${t}-content`).classList.remove('hidden');
+            document.getElementById(`tab-${t}-btn`).className = "flex-1 py-4 text-xs font-bold uppercase tracking-widest text-kings-orange bg-orange-50 border-b-2 border-kings-orange transition";
+        }
+
+        window.onload = () => {
+            const today = new Date().getDay();
+            filterDay(today === 0 ? 1 : today);
+            updateStatus(); setInterval(updateStatus, 60000);
+        };
+    </script>
+</body>
+</html>
