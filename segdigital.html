@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defesa 360° | The Kings Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        'kings-orange': '#FF8C00', 
+                        'kings-black': '#0A0A0A',
+                        'cyber-blue': '#00D4FF',
+                        'faixa-yellow': '#FFD700'
+                    },
+                    fontFamily: { 'heading': ['Montserrat', 'sans-serif'], 'sans': ['Open Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hash-pattern { background-image: radial-gradient(#FF8C00 0.5px, transparent 0.5px); background-size: 15px 15px; opacity: 0.1; }
+        @media (min-width: 1024px) {
+            .timeline-hybrid { display: flex; justify-content: space-between; position: relative; }
+            .timeline-hybrid::before { content: ''; position: absolute; top: 24px; left: 0; right: 0; height: 3px; background: #FF8C00; z-index: 0; }
+            .step-item { flex: 1; text-align: center; padding: 0 15px; position: relative; z-index: 10; }
+        }
+        @media (max-width: 1023px) {
+            .timeline-hybrid { display: flex; flex-direction: column; gap: 40px; border-left: 3px solid #FF8C00; padding-left: 30px; margin-left: 10px; }
+            .step-item { text-align: left; }
+        }
+        .modal { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px; }
+        .modal.active { display: flex; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        /* Estilo dos links de download dentro do modal */
+        .btn-download { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px; border-radius: 12px; font-weight: bold; font-size: 11px; text-transform: uppercase; transition: all 0.3s; }
+    </style>
+</head>
+<body class="bg-white font-sans text-gray-900 antialiased">
+
+    <section class="relative bg-kings-black min-h-[70vh] flex items-center overflow-hidden border-b-8 border-kings-orange">
+        <div class="absolute inset-0 z-0">
+            <img src="https://raw.githubusercontent.com/thekingsbjj/site/main/Hero.png" alt="Hero" class="w-full h-full object-cover opacity-50">
+        </div>
+        <div class="absolute inset-0 hash-pattern z-10"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-20">
+            <img src="https://raw.githubusercontent.com/thekingsbjj/site/main/logo.png" alt="Logo" class="h-24 mb-8">
+            <h1 class="font-heading font-black text-5xl md:text-8xl text-white uppercase italic leading-none">DEFESA PESSOAL<br><span class="text-kings-orange text-7xl md:text-9xl">360°</span></h1>
+            <p class="text-white font-bold uppercase text-sm mt-8 tracking-[0.3em] max-w-2xl bg-kings-black/40 p-4 rounded-lg backdrop-blur-md">Onde o código de honra marcial encontra a segurança digital. Explore nosso acervo de manuais e blinde o ambiente online dos seus filhos com atitude de atleta.</p>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-5xl mx-auto px-6 text-center">
+        <img src="https://raw.githubusercontent.com/thekingsbjj/site/main/DicasPro.png" class="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-kings-orange shadow-2xl grayscale hover:grayscale-0 transition duration-500">
+        <h2 class="font-heading font-black text-3xl uppercase italic mb-6">União Contra o <span class="text-kings-orange font-black">Bullying</span></h2>
+        <p class="text-gray-600 leading-relaxed italic text-lg mb-8 px-4">"A verdadeira defesa pessoal começa onde o mestre não alcança: dentro de casa. Percebemos que o bullying, físico ou digital, tenta encurtar a distância para ferir nossos jovens, e ninguém luta essa batalha sozinho. Para vencer, precisamos de uma parceria real: sua atenção e o diálogo aberto são os 'drills' mais importantes do dia. Não deixe a guarda da sua família passar por falta de conexão. Fortaleça o vínculo, ouça os sinais e mostre ao seu atleta que conversar com você é a estratégia de defesa mais segura e eficiente que existe."</p>
+    </section>
+
+    <section class="py-24 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16"><h2 class="font-heading font-black text-4xl uppercase italic leading-none tracking-tighter italic">O Treino da <span class="text-kings-orange font-black">Conexão</span></h2></div>
+            <div class="timeline-hybrid">
+                <div class="step-item">
+                    <div class="w-12 h-12 bg-kings-orange rounded-full mx-auto flex items-center justify-center text-white mb-4 shadow-lg"><i class="fa-solid fa-eye"></i></div>
+                    <h4 class="font-heading font-black text-xs uppercase">Observação Tática</h4>
+                    <p class="text-[13px] text-gray-500 mt-2 px-4">O corpo fala antes da boca. Note isolamento ou desânimo. O físico muitas vezes precede o digital.</p>
+                </div>
+                <div class="step-item">
+                    <div class="w-12 h-12 bg-kings-orange rounded-full mx-auto flex items-center justify-center text-white mb-4 shadow-lg"><i class="fa-solid fa-comments"></i></div>
+                    <h4 class="font-heading font-black text-xs uppercase">Escuta Atenta</h4>
+                    <p class="text-[13px] text-gray-500 mt-2 px-4">Crie a 'guarda aberta'. Ouça seu filho sem julgar. Ele precisa sentir que seu apoio é o lugar mais seguro.</p>
+                </div>
+                <div class="step-item">
+                    <div class="w-12 h-12 bg-kings-black border-2 border-kings-orange rounded-full mx-auto flex items-center justify-center text-kings-orange mb-4 shadow-lg"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h4 class="font-heading font-black text-xs uppercase">Aliança de Time</h4>
+                    <p class="text-[13px] text-gray-500 mt-2 px-4">Valide a dor dele. No tatame ou na vida, ninguém luta sozinho contra o bullying. Esteja no mesmo time.</p>
+                </div>
+                <div class="step-item">
+                    <div class="w-12 h-12 bg-kings-orange rounded-full mx-auto flex items-center justify-center text-white mb-4 shadow-lg"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h4 class="font-heading font-black text-xs uppercase">Estratégia de Defesa</h4>
+                    <p class="text-[13px] text-gray-500 mt-2 px-4">Ensine que conversar é coragem. O incentivo ao diálogo neutraliza o agressor antes da primeira pegada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="bg-gray-50 p-8 rounded-[40px] border-2 border-dashed border-gray-200">
+                <h3 class="font-heading font-black text-2xl uppercase italic mb-4 text-kings-black italic">O Espelho: <span class="text-kings-orange">E se meu filho for o agressor?</span></h3>
+                <p class="text-gray-600 text-sm leading-relaxed italic">"Muitas vezes focamos na defesa, mas esquecemos de checar nossa própria conduta. O verdadeiro atleta The Kings usa sua força para proteger e liderar, nunca para humilhar. Fique atento se seu filho busca atenção através da agressividade ou usa as redes para diminuir colegas. Corrigir a postura do seu atleta hoje é garantir que ele se torne um mestre amanhã."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-6xl mx-auto px-6 border-b border-gray-100 relative z-20">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <img src="https://raw.githubusercontent.com/thekingsbjj/site/main/Wifi.png" alt="Wifi" class="w-full max-w-sm mx-auto drop-shadow-2xl">
+            <div>
+                <h2 class="font-heading font-black text-4xl uppercase italic mb-8">Arsenal de <span class="text-kings-orange">Defesa Parental</span></h2>
+                <div class="grid gap-4">
+                    <button onclick="openModal('modalInsta')" class="text-left bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-center hover:border-kings-orange transition group">
+                        <div class="bg-gradient-to-tr from-yellow-400 to-purple-600 text-white p-3 rounded-lg shadow-md"><i class="fab fa-instagram"></i></div>
+                        <div><h4 class="font-bold text-xs uppercase italic">Instagram: Central da Família</h4><p class="text-[12px] text-gray-500">Monitoramento ativo e supervisão de tempo e contatos.</p></div>
+                    </button>
+                    <button onclick="openModal('modalFamily')" class="text-left bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-center hover:border-kings-orange transition">
+                        <div class="bg-blue-500 text-white p-3 rounded-lg shadow-md"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <div><h4 class="font-bold text-xs uppercase italic italic">Google Family Link</h4><p class="text-[12px] text-gray-500">Controle total de tempo, apps e localização (Gratuito).</p></div>
+                    </button>
+                    <button onclick="openModal('modalPremium')" class="text-left bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex gap-4 items-center hover:border-kings-orange transition">
+                        <div class="bg-red-600 text-white p-3 rounded-lg shadow-md"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div><h4 class="font-bold text-xs uppercase italic italic">Kaspersky Safe Kids</h4><p class="text-[12px] text-gray-500">A 'Faixa Preta' do monitoramento contra conteúdo impróprio.</p></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative py-32 bg-kings-black overflow-hidden border-y-4 border-kings-orange">
+        <div class="absolute inset-0 z-0 opacity-10">
+            <img src="https://raw.githubusercontent.com/thekingsbjj/site/main/Hero.png" class="w-full h-full object-cover grayscale">
+        </div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="mb-24 border-l-8 border-kings-orange pl-8">
+                <h2 class="font-heading font-black text-5xl md:text-7xl text-white uppercase italic leading-none">Acervo de <br><span class="text-kings-orange">Inteligência</span></h2>
+                <p class="text-gray-400 mt-4 font-bold uppercase text-[13px] tracking-[0.5em]">Manuais Oficiais da Consultoria ConscientiZ</p>
+            </div>
+            <div class="space-y-40">
+                <div class="flex flex-col lg:flex-row items-center gap-16 group">
+                    <div class="lg:w-1/2 space-y-6">
+                        <span class="text-faixa-yellow font-black text-7xl opacity-10 group-hover:opacity-100 transition duration-700 font-heading">01</span>
+                        <h3 class="font-heading font-black text-4xl text-white uppercase italic">Internet com <span class="text-faixa-yellow">Responsa</span></h3>
+                        <p class="text-gray-400 text-lg leading-relaxed italic">A Turma da Mônica ensina que a internet é uma praça pública. Se você não deixa seu filho sozinho em uma praça à noite, por que deixaria no tablet?</p>
+                        <a href="https://drive.google.com/file/d/1hb3l91z2L6AfEKxNEnnbPPl8cHUUmjEZ/view" target="_blank" class="inline-block bg-faixa-yellow text-black font-black px-10 py-4 rounded-full uppercase text-[13px] tracking-widest hover:scale-110 transition shadow-[0_0_30px_rgba(255,215,0,0.4)]">Explorar Gibi</a>
+                    </div>
+                    <div class="lg:w-1/2"><img src="https://raw.githubusercontent.com/thekingsbjj/site/main/Mestre_CiberKimono.png" class="w-full max-w-sm mx-auto transform group-hover:rotate-6 transition duration-500 drop-shadow-[0_20px_50px_rgba(255,215,0,0.25)]"></div>
+                </div>
+                <div class="flex flex-col-reverse lg:flex-row items-center gap-16 group">
+                    <div class="lg:w-1/2"><img src="https://raw.githubusercontent.com/thekingsbjj/site/main/Leaoguardia.png" class="w-full max-w-sm mx-auto transform group-hover:-rotate-6 transition duration-500 drop-shadow-[0_20px_50px_rgba(0,212,255,0.25)]"></div>
+                    <div class="lg:w-1/2 space-y-6 lg:text-right">
+                        <span class="text-cyber-blue font-black text-7xl opacity-10 group-hover:opacity-100 transition duration-700 font-heading">02</span>
+                        <h3 class="font-heading font-black text-4xl text-white uppercase italic">O Juiz do <span class="text-cyber-blue">Grupo</span></h3>
+                        <p class="text-gray-400 text-lg leading-relaxed italic">Administrar um grupo de WhatsApp é como arbitrar uma luta. Se a "guarda passar" e o crime acontecer, o administrador pode ser responsabilizado.</p>
+                        <a href="https://drive.google.com/file/d/1myDXJcexyN4pNsAH912BYzs3zjrY87Oo/view" target="_blank" class="inline-block bg-cyber-blue text-white font-black px-10 py-4 rounded-full uppercase text-[13px] tracking-widest hover:scale-110 transition shadow-[0_0_30px_rgba(0,212,255,0.4)]">Ver Manual ADM</a>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row items-center gap-16 group">
+                    <div class="lg:w-1/2 space-y-6">
+                        <span class="text-kings-orange font-black text-7xl opacity-10 group-hover:opacity-100 transition duration-700 font-heading">03</span>
+                        <h3 class="font-heading font-black text-4xl text-white uppercase italic">Estouro de <span class="text-kings-orange">Pegada</span></h3>
+                        <p class="text-gray-400 text-lg leading-relaxed italic">Não aceite pegada de estranho. Aprenda a identificar o "encurtamento de distância" de predadores e como dar o estouro de pegada definitivo.</p>
+                        <a href="https://drive.google.com/file/d/1TKeE2UW9Oth2Z7Nv52V1cX6wYxwSqfTk/view" target="_blank" class="inline-block bg-kings-orange text-white font-black px-10 py-4 rounded-full uppercase text-[13px] tracking-widest hover:scale-110 transition shadow-[0_0_30px_rgba(255,140,0,0.4)]">Acessar Guia</a>
+                    </div>
+                    <div class="lg:w-1/2"><img src="https://raw.githubusercontent.com/thekingsbjj/site/main/PegadaQuebrada%20(2).png" class="w-full max-w-sm mx-auto transform group-hover:scale-110 transition duration-500 drop-shadow-[0_20px_50px_rgba(255,140,0,0.25)]"></div>
+                </div>
+                <div class="flex flex-col-reverse lg:flex-row items-center gap-16 group border-t border-white/10 pt-32">
+                    <div class="lg:w-1/2"><img src="https://raw.githubusercontent.com/thekingsbjj/site/main/Coroawifi%20(2).png" class="w-full max-w-sm mx-auto transform group-hover:rotate-12 transition duration-500 drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)]"></div>
+                    <div class="lg:w-1/2 space-y-6 lg:text-right">
+                        <span class="text-white font-black text-7xl opacity-10 group-hover:opacity-100 transition duration-700 font-heading">04</span>
+                        <h3 class="font-heading font-black text-4xl text-white uppercase italic">Acordo de <span class="text-kings-orange">Família</span></h3>
+                        <p class="text-gray-400 text-lg leading-relaxed italic">A atitude de um verdadeiro atleta de jiu-jitsu dentro de casa. Estabeleça as regras de conexão real para que a tecnologia seja aliada da união familiar.</p>
+                        <a href="https://drive.google.com/file/d/1BFC1J1fIArC466Gomwk-HUWuzBRmJuIp/view" target="_blank" class="inline-block border-2 border-white text-white font-black px-10 py-4 rounded-full uppercase text-[13px] tracking-widest hover:bg-white hover:text-black transition">Baixar Guia de Atitude</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-kings-black text-white relative z-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="font-heading font-black text-4xl uppercase italic mb-2 leading-none italic">Acordos de <br><span class="text-kings-orange font-black">Conexão Humana</span></h2>
+                <p class="text-gray-400 text-xs uppercase font-bold tracking-widest mb-8">Combate o isolamento digital que alimenta tanto a vítima quanto o agressor de bullying.</p>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-kings-orange pl-4 bg-white/5 p-4 rounded-r-xl italic">
+                        <h4 class="font-bold uppercase text-[13px] text-kings-orange mb-1">Foco Total no Tatame</h4>
+                        <p class="text-[11px] text-gray-300">Uso de celulares proibido durante as aulas. No tatame, a única conexão permitida é com o mestre e parceiro de treino.</p>
+                    </div>
+                    <div class="border-l-4 border-kings-orange pl-4 bg-white/5 p-4 rounded-r-xl italic">
+                        <h4 class="font-bold uppercase text-[13px] text-kings-orange mb-1">O Treino da Convivência</h4>
+                        <p class="text-[11px] text-gray-300">Incentivamos a interação. Atletas que aprendem a lidar com pessoas e observar o ambiente neutralizam conflitos antes do bullying.</p>
+                    </div>
+                    <div class="border-l-4 border-kings-orange pl-4 bg-white/5 p-4 rounded-r-xl italic">
+                        <h4 class="font-bold uppercase text-[13px] text-kings-orange mb-1">Atitude de Atleta</h4>
+                        <p class="text-[11px] text-gray-300">O respeito na academia reflete o caráter fora dela. O verdadeiro guerreiro usa sua presença para acolher e fortalecer o time.</p>
+                    </div>
+                </div>
+            </div>
+            <img src="https://raw.githubusercontent.com/thekingsbjj/site/main/toqueconexao.png" alt="Conexão" class="w-full rounded-[40px] shadow-2xl grayscale hover:grayscale-0 transition duration-700">
+        </div>
+    </section>
+
+    <footer class="py-16 bg-white border-t border-gray-100 text-center px-6 relative z-50">
+        <img src="https://raw.githubusercontent.com/thekingsbjj/site/main/logo.png" alt="Logo" class="h-14 mx-auto mb-8 grayscale opacity-20">
+        <p class="font-heading font-bold text-gray-700 uppercase">Parceria <span class="text-kings-orange">ConscientiZ</span></p>
+        <p class="text-[9px] text-gray-300 font-bold uppercase tracking-[0.3em] mt-8">© 2026 The Kings Academy • Storytelling de Segurança Digital</p>
+    </footer>
+
+    <div id="modalInsta" class="modal" onclick="closeModal('modalInsta')">
+        <div class="bg-white rounded-3xl p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-4 mb-6 border-b-4 border-kings-orange pb-4">
+                <div class="bg-gradient-to-tr from-yellow-400 to-purple-600 text-white p-3 rounded-xl"><i class="fab fa-instagram text-2xl"></i></div>
+                <h3 class="font-heading font-black text-xl uppercase italic leading-none">Instagram:<br>Central da Família</h3>
+            </div>
+            <div class="space-y-6 text-sm text-gray-700 leading-relaxed">
+                <div class="bg-gray-50 p-4 rounded-xl border-l-4 border-purple-600 italic font-semibold text-gray-800">
+                    "O que você ganha: Ver quanto tempo ele passa no app, definir limites diários e ver quais contas ele seguiu ou quem o seguiu. Isso te ajuda a proteger o intelectual e principalmente emocional do seu filho (a)."
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-black uppercase text-[13px] text-kings-orange tracking-widest">Passo a Passo de Configuração:</h4>
+                    <p><strong>1.</strong> No celular do Responsável: Vá em Perfil > Menu (3 traços) > <strong>Supervisão</strong>.</p>
+                    <p><strong>2.</strong> Toque em "Criar Convite" e envie o link para o smartphone do seu filho via WhatsApp.</p>
+                    <p><strong>3.</strong> No celular do filho, ele deve abrir o link e aceitar a supervisão.</p>
+                </div>
+                <a href="https://familycenter.instagram.com/dashboard/" target="_blank" class="block text-center text-purple-600 font-bold underline text-xs">Acessar Guia de Configuração Oficial</a>
+                <div class="grid grid-cols-2 gap-3 pt-4 border-t border-gray-100">
+                    <a href="https://apps.apple.com/br/app/instagram/id389801252" target="_blank" class="btn-download bg-black text-white hover:opacity-80"><i class="fab fa-apple"></i> App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.instagram.android" target="_blank" class="btn-download bg-green-600 text-white hover:opacity-80"><i class="fab fa-android"></i> Google Play</a>
+                </div>
+            </div>
+            <button onclick="closeModal('modalInsta')" class="mt-8 w-full bg-kings-black text-white py-4 rounded-xl font-bold uppercase text-xs tracking-widest shadow-lg">Fechar Tutorial</button>
+        </div>
+    </div>
+
+    <div id="modalFamily" class="modal" onclick="closeModal('modalFamily')">
+        <div class="bg-white rounded-3xl p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-4 mb-6 border-b-4 border-blue-500 pb-4">
+                <div class="bg-blue-500 text-white p-3 rounded-xl"><i class="fa-solid fa-mobile-screen text-2xl"></i></div>
+                <h3 class="font-heading font-black text-xl uppercase italic leading-none">Google<br>Family Link</h3>
+            </div>
+            <div class="space-y-6 text-sm text-gray-700 leading-relaxed">
+                <div class="bg-blue-50 p-4 rounded-xl border-l-4 border-blue-500 italic text-blue-900">
+                    A armadura digital completa. Controle o tempo de uso, aprove downloads e localize o aparelho do seu atleta em tempo real.
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-black uppercase text-[13px] text-blue-500 tracking-widest">Manual de Instalação:</h4>
+                    <p><strong>1.</strong> Instale o app no celular do Pai e selecione a conta Google do filho.</p>
+                    <p><strong>2.</strong> No celular do Filho, vá em <em>Configurações > Google > Controles Parentais</em> para vincular ao seu.</p>
+                    <p><strong>3.</strong> Defina a 'Hora de Dormir' para que o aparelho bloqueie automaticamente à noite.</p>
+                </div>
+                <a href="https://support.google.com/familylink/#topic=7339054" target="_blank" class="block text-center text-blue-500 font-bold underline text-xs">Guia Oficial de Suporte Google</a>
+                <div class="pt-4 border-t border-gray-100">
+                    <p class="text-[13px] font-bold uppercase mb-3 text-center">Links de Download:</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="https://apps.apple.com/br/app/google-family-link/id1150085200" target="_blank" class="btn-download bg-black text-white hover:opacity-80"><i class="fab fa-apple"></i> App Store</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.kids.familylink" target="_blank" class="btn-download bg-blue-600 text-white hover:opacity-80"><i class="fab fa-android"></i> Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <button onclick="closeModal('modalFamily')" class="mt-8 w-full bg-blue-500 text-white py-4 rounded-xl font-bold uppercase text-xs tracking-widest shadow-lg">Concluído</button>
+        </div>
+    </div>
+
+    <div id="modalPremium" class="modal" onclick="closeModal('modalPremium')">
+        <div class="bg-white rounded-3xl p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-4 mb-6 border-b-4 border-red-600 pb-4">
+                <div class="bg-red-600 text-white p-3 rounded-xl"><i class="fa-solid fa-shield-halved text-2xl"></i></div>
+                <h3 class="font-heading font-black text-xl uppercase italic leading-none">Kaspersky<br>Safe Kids</h3>
+            </div>
+            <div class="space-y-6 text-sm text-gray-700 leading-relaxed">
+                <div class="bg-red-50 p-4 rounded-xl border-l-4 border-red-600 italic text-red-900">
+                    A Faixa Preta da segurança. Filtros extremamente rigorosos para bloquear conteúdo impróprio e cercas geográficas para rotas seguras.
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-black uppercase text-[13px] text-red-600 tracking-widest">Manual de Configuração:</h4>
+                    <p><strong>1.</strong> Crie uma conta no portal My Kaspersky.</p>
+                    <p><strong>2.</strong> Instale o app no seu celular (Modo Pais) e no do seu filho (Modo Criança).</p>
+                    <p><strong>3.</strong> Siga o assistente de permissões para blindar o app contra desinstalação.</p>
+                </div>
+                <a href="https://support.kaspersky.com/help/KasperskySafeKids/Android_1.78/pt-BR/95192.htm" target="_blank" class="block text-center text-red-600 font-bold underline text-xs">Página Oficial de Instruções</a>
+                <div class="grid grid-cols-2 gap-3 pt-4 border-t border-gray-100">
+                    <a href="https://apps.apple.com/br/app/kaspersky-safe-kids-with-gps/id1044396417" target="_blank" class="btn-download bg-black text-white hover:opacity-80"><i class="fab fa-apple"></i> App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.kaspersky.safekids" target="_blank" class="btn-download bg-red-600 text-white hover:opacity-80"><i class="fab fa-android"></i> Google Play</a>
+                </div>
+            </div>
+            <button onclick="closeModal('modalPremium')" class="mt-8 w-full bg-gray-400 text-white py-4 rounded-xl font-bold uppercase text-xs tracking-widest">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
+    </script>
+</body>
+</html>
